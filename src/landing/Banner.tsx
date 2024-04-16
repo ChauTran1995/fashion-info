@@ -1,8 +1,8 @@
-import BannerZero from "./banner-0.jpg";
-import BannerOne from "./banner-1.jpg";
-import BannerTwo from "./banner-2.jpg";
+import BannerZero from "../assets/images/banner-0.jpg";
+import BannerOne from "../assets/images/banner-1.jpg";
+import BannerTwo from "../assets/images/banner-2.jpg";
 
-function BannerIncidator(props) {
+function BannerIncidator(props: any) {
   return (
     <button
       type="button"
@@ -14,7 +14,7 @@ function BannerIncidator(props) {
   );
 }
 
-function BannerImage(props) {
+function BannerImage(props: any) {
   return (
     <div
       className={"carousel-item " + (props.active ? "active" : "")}

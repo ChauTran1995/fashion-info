@@ -1,10 +1,10 @@
 import Image from "../../nillkin-case-1.jpg";
 import { Link } from "react-router-dom";
 
-function RelatedProduct(props) {
+function RelatedProduct(props: any) {
   const price = 10000;
   let percentOff;
-  let offPrice = `${price}Ks`;
+  let offPrice: any = `${price}Ks`;
 
   if (props.percentOff && props.percentOff > 0) {
     percentOff = (

@@ -3,11 +3,15 @@ import ProductDetail from "./products/detail/ProductDetail";
 import { Switch, Route } from "react-router-dom";
 import Landing from "./landing/Landing";
 import ProductList from "./products/ProductList";
+import Login from "./Auth/login";
 
 function App() {
   return (
-    <Template>
-      <Switch>
+    <Switch>
+      <Route path="/Login" exact>
+        <Login />
+      </Route>
+      <Template>
         <Route path="/products" exact>
           <ProductList />
         </Route>
@@ -17,8 +21,8 @@ function App() {
         <Route path="/" exact>
           <Landing />
         </Route>
-      </Switch>
-    </Template>
+      </Template>
+    </Switch>
   );
 }
 

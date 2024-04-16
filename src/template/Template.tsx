@@ -2,7 +2,7 @@ import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 
-function Template(props) {
+function Template(props: any) {
   return (
     <>
       <Header />

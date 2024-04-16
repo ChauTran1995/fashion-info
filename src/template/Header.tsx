@@ -10,7 +10,7 @@ function Header() {
     setOpenedDrawer(!openedDrawer);
   }
 
-  function changeNav(event) {
+  function changeNav(event: any) {
     if (openedDrawer) {
       setOpenedDrawer(false)
     }
