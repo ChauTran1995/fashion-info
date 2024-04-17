@@ -13,7 +13,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import bg_login from "../assets/images/bg_login.svg";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props: any) {
   return (
@@ -37,6 +38,7 @@ function Copyright(props: any) {
 const defaultTheme = createTheme();
 
 const Login = (props: any) => {
+  const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -44,6 +46,7 @@ const Login = (props: any) => {
       email: data.get("email"),
       password: data.get("password"),
     });
+    navigate("/home");
   };
 
   return (
@@ -56,12 +59,14 @@ const Login = (props: any) => {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${bg_login})`,
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: "", //`url(${bg_login})`,
+            backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
             backgroundSize: "cover",
-            backgroundPosition: 'center',
+            backgroundPosition: "center",
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>

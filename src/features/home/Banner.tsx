@@ -1,6 +1,6 @@
-import BannerZero from "../assets/images/banner-0.jpg";
-import BannerOne from "../assets/images/banner-1.jpg";
-import BannerTwo from "../assets/images/banner-2.jpg";
+import BannerZero from "../../assets/images/banner-0.jpg";
+import BannerOne from "../../assets/images/banner-1.jpg";
+import BannerTwo from "../../assets/images/banner-2.jpg";
 
 function BannerIncidator(props: any) {
   return (
@@ -15,15 +15,16 @@ function BannerIncidator(props: any) {
 }
 
 function BannerImage(props: any) {
+  const aspectRatioStyle = {
+    "--bs-aspect-ratio": "50%",
+    maxHeight: "460px",
+  };
   return (
     <div
       className={"carousel-item " + (props.active ? "active" : "")}
       data-bs-interval="5000"
     >
-      <div
-        className="ratio"
-        style={{ "--bs-aspect-ratio": "50%", maxHeight: "460px" }}
-      >
+      <div className="ratio" style={aspectRatioStyle}>
         <img
           className="d-block w-100 h-100 bg-dark cover"
           alt=""

@@ -28,7 +28,9 @@ function ProductH(props: any) {
       <div className="card shadow-sm">
         <div className="row g-0">
           <div className="col-4">
-            <Link to="/products/1" href="!#" replace>
+            <Link to="/products/1" 
+            // href="!#" 
+            replace>
               {percentOff}
               <img
                 className="rounded-start bg-dark cover w-100 h-100"

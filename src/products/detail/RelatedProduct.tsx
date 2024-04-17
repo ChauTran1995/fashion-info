@@ -27,7 +27,7 @@ function RelatedProduct(props: any) {
     <Link
       to="/products/1"
       className="col text-decoration-none"
-      href="!#"
+      // href="!#"
       replace
     >
       <div className="card shadow-sm">

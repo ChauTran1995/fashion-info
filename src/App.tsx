@@ -1,28 +1,21 @@
 import Template from "./template/Template";
 import ProductDetail from "./products/detail/ProductDetail";
-import { Switch, Route } from "react-router-dom";
-import Landing from "./landing/Landing";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Landing from "./features/home/Landing";
 import ProductList from "./products/ProductList";
-import Login from "./Auth/login";
+import Login from "./features/login/login";
 
 function App() {
   return (
-    <Switch>
-      <Route path="/Login" exact>
-        <Login />
-      </Route>
-      <Template>
-        <Route path="/products" exact>
-          <ProductList />
-        </Route>
-        <Route path="/products/:slug">
-          <ProductDetail />
-        </Route>
-        <Route path="/" exact>
-          <Landing />
-        </Route>
-      </Template>
-    </Switch>
+    //<Template>
+      <Routes>
+        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/products" element={<ProductList />}></Route>
+        <Route path="/products/:slug" element={<ProductDetail />}></Route>
+        <Route path="/home" element={<Landing />}></Route>
+      </Routes>
+    //</Template>
   );
 }
 
