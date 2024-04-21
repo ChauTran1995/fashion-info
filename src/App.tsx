@@ -1,22 +1,11 @@
-import Template from "./template/Template";
-import ProductDetail from "./products/detail/ProductDetail";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Landing from "./features/home/Landing";
-import ProductList from "./products/ProductList";
-import Login from "./features/login/login";
+import Themeroutes from "./routes/Router";
+import { useRoutes } from "react-router-dom";
 
-function App() {
-  return (
-    //<Template>
-      <Routes>
-        <Route path="/Login" element={<Login />}></Route>
-        <Route path="/" element={<Navigate replace to="/home" />} />
-        <Route path="/products" element={<ProductList />}></Route>
-        <Route path="/products/:slug" element={<ProductDetail />}></Route>
-        <Route path="/home" element={<Landing />}></Route>
-      </Routes>
-    //</Template>
-  );
-}
+const App = () => {
+  const routing = useRoutes(Themeroutes);
+  console.log("🚀 ~ App ~ routing:", routing)
+
+  return <div className="dark">{routing}</div>;
+};
 
 export default App;
